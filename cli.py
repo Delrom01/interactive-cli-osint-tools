@@ -44,14 +44,12 @@ def cli():                  ######!! cli with a list of functions to be selected
             print("")
             print(doc)
             print("")
-            args_values = [""] # DEL "" ------
+            args_values = [""]
             for i in range(len(args)):
                 entry = questionary.text(f"Enter a value for the argument {args[i]} : ").ask()
                 args_values.append(entry)
             print("")
-            print(args_values)
-            trio.run(commands.Instances.holehe, *args_values)
-            #getattr(commands.Instances, choice)(*args_values)
+            getattr(commands.Instances, choice)(*args_values)
             print("")
 
         exit = questionary.confirm("Do you want to enter a new command ?").ask()
