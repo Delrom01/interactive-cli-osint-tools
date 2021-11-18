@@ -3,8 +3,6 @@ import inspect
 import commands    #commands.py file
 from colorama import *
 
-import trio
-
 init()   #for colorama
 
 
