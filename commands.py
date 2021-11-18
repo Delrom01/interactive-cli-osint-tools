@@ -15,9 +15,20 @@ class Instances:  ######!! This file contains all the commands that can be used/
     def __del__(self) -> None:  # function to cleanly delete instances
         print(Fore.YELLOW + """--- Deletion of instances ---""" + Fore.RESET)
 
+
     def toutatis(self, username, sessionsId):
-        resultat = core.main(username, sessionsId)
-        print(resultat)
+        """
+        Toutatis is a tool that allows you to extract information from instagrams accounts such as e-mails, phone numbers and more
+
+        Args:
+            username: username of the instagram profile to OSINT
+            sessionsId: instagram sessionid (in cookies)
+
+        Returns: nothing
+
+        """
+        core.main(username, sessionsId)
+
 
     def exit(self):  # function to leave the cli
         pass

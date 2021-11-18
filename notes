@@ -1,0 +1,19 @@
+
+----------------------------------------------------------------------------------------------------------------
+Modifications du fichier core.py de toutatis :
+
+def main(username, sessionsId):
+#def main():                                                                                    -> ligne 71
+    #parser = argparse.ArgumentParser()                                                         -> ligne 72
+    #required = parser.add_argument_group('required arguments')                                 -> ligne 73
+    #parser.add_argument('-s', '--sessionid',help="Instagram session ID",required=True)         -> ligne 74
+    #parser.add_argument('-u','--username',help="One username",required=True)                   -> ligne 75
+    #args = parser.parse_args()                                                                 -> ligne 76
+    #sessionsId=args.sessionid                                                                  -> ligne 77
+
+    infos = getInfo(username,sessionsId)
+    #infos = getInfo(args.username,sessionsId)      -> ligne 80
+
+    other_infos=advanced_lookup(username)
+    #other_infos=advanced_lookup(args.username)     -> ligne 106
+----------------------------------------------------------------------------------------------------------------
