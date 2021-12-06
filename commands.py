@@ -4,6 +4,7 @@ Fichier de code définissant les commandes du CLI
 Romain Delalande
 """
 import subprocess
+import questionary
 from colorama import Fore
 
 WAIT_MESSAGE = f"{Fore.YELLOW} Veuillez patienter {Fore.RESET} \n"
@@ -56,8 +57,7 @@ class Commands:
             username (str): username (pseudo) du compte instagram à OSINT
 
         """
-        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TOUTATIS... {Fore.RESET}")
-        print("")
+        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TOUTATIS... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
 
         try:
@@ -83,8 +83,7 @@ class Commands:
             phone (int): numéro de téléphone (9 chiffres)
 
         """
-        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}")
-        print("")
+        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
 
         try:
@@ -99,3 +98,38 @@ class Commands:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
 
         print(f"{Fore.YELLOW} FIN DU PROGRAMME IGNORANT {Fore.RESET}")
+
+    def holehe(self, email: str) -> None:
+        """
+        Holehe vérifie si un mail est attaché à un compte sur des sites
+        comme twitter, instagram, imgur et plus de 120 autres
+
+        Args:
+            email (int): adresse mail à vérifier (ex: test@gmail.com)
+
+        """
+        display = questionary.select("Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
+                                choices=("Only used", "All")).ask()
+        print(f"\n{Fore.YELLOW} DEMARRAGE DU PROGRAMME HOLEHE... {Fore.RESET}\n")
+        print(WAIT_MESSAGE)
+        try:
+            if "Only used" in display:
+                holehe = subprocess.Popen(f"holehe --only-used {email}",
+                                            shell=True, stdout=subprocess.PIPE,
+                                            stderr=subprocess.PIPE, universal_newlines=True)
+                out_holehe, err_holehe = holehe.communicate()
+                holehe.wait()
+                print(out_holehe)
+
+            else:
+                holehe = subprocess.Popen(f"holehe {email}",
+                                          shell=True, stdout=subprocess.PIPE,
+                                          stderr=subprocess.PIPE, universal_newlines=True)
+                out_holehe, err_holehe = holehe.communicate()
+                holehe.wait()
+                print(out_holehe)
+
+        except KeyboardInterrupt:
+            print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
+
+        print(f"{Fore.YELLOW} FIN DU PROGRAMME HOLEHE {Fore.RESET}")

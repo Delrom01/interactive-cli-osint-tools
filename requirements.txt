@@ -3,3 +3,4 @@ colorama==0.4.4
 requests==2.26.0
 toutatis==1.24
 ignorant==1.2
+holehe==1.60.3
