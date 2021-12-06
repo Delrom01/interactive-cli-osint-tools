@@ -83,16 +83,27 @@ class Commands:
             phone (int): numéro de téléphone (9 chiffres)
 
         """
-        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}\n")
+        display = questionary.select("Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
+                                     choices=("Only used", "All")).ask()
+        print(f"\n{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
 
         try:
-            ignorant = subprocess.Popen(f"ignorant {country_code} {phone}",
-                                        shell=True, stdout=subprocess.PIPE,
-                                        stderr=subprocess.PIPE, universal_newlines=True)
-            out_ignorant, err_ignorant = ignorant.communicate()
-            ignorant.wait()
-            print(out_ignorant)
+            if "Only used" in display:
+                ignorant = subprocess.Popen(f"ignorant --only-used {country_code} {phone}",
+                                            shell=True, stdout=subprocess.PIPE,
+                                            stderr=subprocess.PIPE, universal_newlines=True)
+                out_ignorant, err_ignorant = ignorant.communicate()
+                ignorant.wait()
+                print(out_ignorant)
+
+            else:
+                ignorant = subprocess.Popen(f"ignorant {country_code} {phone}",
+                                            shell=True, stdout=subprocess.PIPE,
+                                            stderr=subprocess.PIPE, universal_newlines=True)
+                out_ignorant, err_ignorant = ignorant.communicate()
+                ignorant.wait()
+                print(out_ignorant)
 
         except KeyboardInterrupt:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
