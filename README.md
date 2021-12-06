@@ -13,7 +13,7 @@ Pour le moment, je n'ai que récupéré les outils de xxx. Disponibles sur PyPi,
 2 fichiers sont nécessaires pour faire fonctionner le CLI :
 
   - commands.py : qui contient une classe Commands définissant toutes les fonctions du CLI. C'est dans ce fichier qu'on ajoutera le code d'un nouvel outil.
-  - cli_list_exe ou cli_input_exe : qui contient le code de l'interface CLI à générer du fichier commands.py. Nous avons 2 types de CLI : l'un où les outils sont         
+  - cli_list_exe.py ou cli_input_exe.py : qui contient le code de l'interface CLI à générer du fichier commands.py. Nous avons 2 types de CLI : l'un où les outils sont         
     appelés par saisie au clavier (avec système d'autocomplétion), et l'autre où les outils sont sélectionnés parmi une liste à l'aide des flèches du clavier.    
     
     Seulement quelques lignes de codes diverses entre ces 2 scripts python afin de changer le mode de sélection (saisie au clavier ou saisie par déplacement de 
