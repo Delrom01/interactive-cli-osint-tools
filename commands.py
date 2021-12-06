@@ -36,7 +36,7 @@ class Commands:
 
         """
 
-    def reset_instances(self):
+    def _reset_instances(self):
         """
         Fonction permettant de réinitialiser les instances de la classe
 
@@ -116,7 +116,7 @@ class Commands:
         comme twitter, instagram, imgur et plus de 120 autres
 
         Args:
-            email (int): adresse mail à vérifier (ex: test@gmail.com)
+            email (str): adresse mail à vérifier (ex: test@gmail.com)
 
         """
         display = questionary.select("Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
@@ -144,3 +144,82 @@ class Commands:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
 
         print(f"{Fore.YELLOW} FIN DU PROGRAMME HOLEHE {Fore.RESET}")
+
+    def maigret(self, username: str) -> None:
+        """
+        Maigret constitue un dossier sur une personne en se basant uniquement sur son nom
+        d'utilisateur, en vérifiant les comptes sur un très grand nombre de sites (>2400)
+
+        Args:
+            username (str): nom d'utilisateur (pseudo) à OSINT
+
+        Returns:
+            Un fichier de résultat "report_username.format" est généré dans le répertoire
+            /reports/
+
+        """
+        report_type = questionary.select("Quel format de résultat voulez-vous ? ",
+                                choices=("PDF", "HTML", "TXT", "CSV", "JSON", "XMIND")).ask()
+        report_type = list(report_type)[0]
+        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME MAIGRET... {Fore.RESET}\n")
+        print(WAIT_MESSAGE)
+
+        try:
+            maigret = subprocess.Popen(f"maigret -{report_type} {username} -a",
+                                        shell=True, stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE, universal_newlines=True)
+            out_maigret, err_maigret = maigret.communicate()
+            maigret.wait()
+            print(out_maigret)
+
+        except KeyboardInterrupt:
+            print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
+
+        print(f"{Fore.YELLOW} FIN DU PROGRAMME MAIGRET {Fore.RESET}")
+
+    def twint(self, username: str, topic: str, backup_file) -> None:
+        """
+        Twint est un outil de scraping Twitter qui permet de récupérer des Tweets à partir
+        de profils Twitter ou de sujets (utilise les opérateurs de recherches Twitter)
+
+        Args:
+            username (str): nom d'utilisateur (pseudo) Twitter
+            topic (str): mot clés, sujet à rechercher (dans des tweets)
+            backup_file (str): nom du fichier de résultat
+
+        Returns:
+            Un fichier de résultat "backup_file.csv" est généré
+
+        """
+        print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TWINT... {Fore.RESET}\n")
+        print(WAIT_MESSAGE)
+
+        try:
+            if username == "" and topic != "":
+                twint = subprocess.Popen(f"twint -s {topic} -o {backup_file}.csv --csv",
+                                          shell=True, stdout=subprocess.PIPE,
+                                          stderr=subprocess.PIPE, universal_newlines=True)
+                out_twint, err_twint = twint.communicate()
+                twint.wait()
+                print(out_twint)
+
+            elif username != "" and topic == "":
+                twint = subprocess.Popen(f"twint -u {username} -o {backup_file}.csv --csv",
+                                         shell=True, stdout=subprocess.PIPE,
+                                         stderr=subprocess.PIPE, universal_newlines=True)
+                out_twint, err_twint = twint.communicate()
+                twint.wait()
+                print(out_twint)
+
+            else:
+                twint = subprocess.Popen(f"twint -u {username} -s {topic} -o {backup_file}.csv --csv",
+                                         shell=True, stdout=subprocess.PIPE,
+                                         stderr=subprocess.PIPE, universal_newlines=True)
+                out_twint, err_twint = twint.communicate()
+                twint.wait()
+                print(out_twint)
+
+        except KeyboardInterrupt:
+            print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
+
+        print(f"{Fore.YELLOW} FIN DU PROGRAMME TWINT {Fore.RESET}")
