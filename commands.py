@@ -59,7 +59,6 @@ class Commands:
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TOUTATIS... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
-
         try:
             toutatis = subprocess.Popen(f"toutatis -s {sessionsid} -u {username}",
                                         shell=True, stdout=subprocess.PIPE,
@@ -67,10 +66,8 @@ class Commands:
             out_toutatis, err_toutatis = toutatis.communicate()
             toutatis.wait()
             print(out_toutatis)
-
         except KeyboardInterrupt:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
-
         print(f"{Fore.YELLOW} FIN DU PROGRAMME TOUTATIS {Fore.RESET}")
 
     def ignorant(self, country_code: int, phone: int) -> None:
@@ -87,7 +84,6 @@ class Commands:
                                      choices=("Only used", "All")).ask()
         print(f"\n{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
-
         try:
             if "Only used" in display:
                 ignorant = subprocess.Popen(f"ignorant --only-used {country_code} {phone}",
@@ -96,7 +92,6 @@ class Commands:
                 out_ignorant, err_ignorant = ignorant.communicate()
                 ignorant.wait()
                 print(out_ignorant)
-
             else:
                 ignorant = subprocess.Popen(f"ignorant {country_code} {phone}",
                                             shell=True, stdout=subprocess.PIPE,
@@ -104,10 +99,8 @@ class Commands:
                 out_ignorant, err_ignorant = ignorant.communicate()
                 ignorant.wait()
                 print(out_ignorant)
-
         except KeyboardInterrupt:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
-
         print(f"{Fore.YELLOW} FIN DU PROGRAMME IGNORANT {Fore.RESET}")
 
     def holehe(self, email: str) -> None:
@@ -131,7 +124,6 @@ class Commands:
                 out_holehe, err_holehe = holehe.communicate()
                 holehe.wait()
                 print(out_holehe)
-
             else:
                 holehe = subprocess.Popen(f"holehe {email}",
                                           shell=True, stdout=subprocess.PIPE,
@@ -139,10 +131,8 @@ class Commands:
                 out_holehe, err_holehe = holehe.communicate()
                 holehe.wait()
                 print(out_holehe)
-
         except KeyboardInterrupt:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
-
         print(f"{Fore.YELLOW} FIN DU PROGRAMME HOLEHE {Fore.RESET}")
 
     def maigret(self, username: str) -> None:
@@ -163,7 +153,6 @@ class Commands:
         report_type = list(report_type)[0]
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME MAIGRET... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
-
         try:
             maigret = subprocess.Popen(f"maigret -{report_type} {username} -a",
                                         shell=True, stdout=subprocess.PIPE,
@@ -171,10 +160,8 @@ class Commands:
             out_maigret, err_maigret = maigret.communicate()
             maigret.wait()
             print(out_maigret)
-
         except KeyboardInterrupt:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
-
         print(f"{Fore.YELLOW} FIN DU PROGRAMME MAIGRET {Fore.RESET}")
 
     def twint(self, username: str, topic: str, backup_file) -> None:
@@ -193,7 +180,6 @@ class Commands:
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TWINT... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
-
         try:
             if username == "" and topic != "":
                 twint = subprocess.Popen(f"twint -s {topic} -o {backup_file}.csv --csv",
@@ -202,7 +188,6 @@ class Commands:
                 out_twint, err_twint = twint.communicate()
                 twint.wait()
                 print(out_twint)
-
             elif username != "" and topic == "":
                 twint = subprocess.Popen(f"twint -u {username} -o {backup_file}.csv --csv",
                                          shell=True, stdout=subprocess.PIPE,
@@ -210,7 +195,6 @@ class Commands:
                 out_twint, err_twint = twint.communicate()
                 twint.wait()
                 print(out_twint)
-
             else:
                 twint = subprocess.Popen(f"twint -u {username} -s {topic} -o {backup_file}.csv --csv",
                                          shell=True, stdout=subprocess.PIPE,
@@ -218,8 +202,6 @@ class Commands:
                 out_twint, err_twint = twint.communicate()
                 twint.wait()
                 print(out_twint)
-
         except KeyboardInterrupt:
             print(f"{Fore.RED} Interruption utilisateur {Fore.RESET}")
-
         print(f"{Fore.YELLOW} FIN DU PROGRAMME TWINT {Fore.RESET}")
