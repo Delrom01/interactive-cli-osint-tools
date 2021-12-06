@@ -4,8 +4,8 @@ Fichier de code définissant les commandes du CLI
 Romain Delalande
 """
 import subprocess
-import questionary
 from colorama import Fore
+import questionary
 
 WAIT_MESSAGE = f"{Fore.YELLOW} Veuillez patienter {Fore.RESET} \n"
 
@@ -80,8 +80,9 @@ class Commands:
             phone (int): numéro de téléphone (9 chiffres)
 
         """
-        display = questionary.select("Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
-                                     choices=("Only used", "All")).ask()
+        display = questionary.select(
+            "Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
+            choices=("Only used", "All")).ask()
         print(f"\n{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
         try:
@@ -112,15 +113,16 @@ class Commands:
             email (str): adresse mail à vérifier (ex: test@gmail.com)
 
         """
-        display = questionary.select("Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
-                                choices=("Only used", "All")).ask()
+        display = questionary.select(
+            "Voulez-vous afficher uniquement les sites trouvés ou tous les résultats ? ",
+            choices=("Only used", "All")).ask()
         print(f"\n{Fore.YELLOW} DEMARRAGE DU PROGRAMME HOLEHE... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
         try:
             if "Only used" in display:
                 holehe = subprocess.Popen(f"holehe --only-used {email}",
-                                            shell=True, stdout=subprocess.PIPE,
-                                            stderr=subprocess.PIPE, universal_newlines=True)
+                                          shell=True, stdout=subprocess.PIPE,
+                                          stderr=subprocess.PIPE, universal_newlines=True)
                 out_holehe, err_holehe = holehe.communicate()
                 holehe.wait()
                 print(out_holehe)
@@ -148,15 +150,16 @@ class Commands:
             /reports/
 
         """
-        report_type = questionary.select("Quel format de résultat voulez-vous ? ",
-                                choices=("PDF", "HTML", "TXT", "CSV", "JSON", "XMIND")).ask()
+        report_type = questionary.select(
+            "Quel format de résultat voulez-vous ? ",
+            choices=("PDF", "HTML", "TXT", "CSV", "JSON", "XMIND")).ask()
         report_type = list(report_type)[0]
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME MAIGRET... {Fore.RESET}\n")
         print(WAIT_MESSAGE)
         try:
             maigret = subprocess.Popen(f"maigret -{report_type} {username} -a",
-                                        shell=True, stdout=subprocess.PIPE,
-                                        stderr=subprocess.PIPE, universal_newlines=True)
+                                       shell=True, stdout=subprocess.PIPE,
+                                       stderr=subprocess.PIPE, universal_newlines=True)
             out_maigret, err_maigret = maigret.communicate()
             maigret.wait()
             print(out_maigret)
@@ -183,8 +186,8 @@ class Commands:
         try:
             if username == "" and topic != "":
                 twint = subprocess.Popen(f"twint -s {topic} -o {backup_file}.csv --csv",
-                                          shell=True, stdout=subprocess.PIPE,
-                                          stderr=subprocess.PIPE, universal_newlines=True)
+                                         shell=True, stdout=subprocess.PIPE,
+                                         stderr=subprocess.PIPE, universal_newlines=True)
                 out_twint, err_twint = twint.communicate()
                 twint.wait()
                 print(out_twint)
@@ -196,9 +199,10 @@ class Commands:
                 twint.wait()
                 print(out_twint)
             else:
-                twint = subprocess.Popen(f"twint -u {username} -s {topic} -o {backup_file}.csv --csv",
-                                         shell=True, stdout=subprocess.PIPE,
-                                         stderr=subprocess.PIPE, universal_newlines=True)
+                twint = subprocess.Popen(
+                    f"twint -u {username} -s {topic} -o {backup_file}.csv --csv",
+                    shell=True, stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE, universal_newlines=True)
                 out_twint, err_twint = twint.communicate()
                 twint.wait()
                 print(out_twint)
