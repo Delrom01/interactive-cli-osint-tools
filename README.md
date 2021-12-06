@@ -8,7 +8,7 @@ L'idée c'est d'avoir un seul outil à lancer (lors d'un CTF par exemple) pour e
 On retrouve donc dans le CLI la liste des outils avec leur description. Leur utilisation est ensuite guidée est assistée.
 
 ### Organisation
-Pour le moment, je n'ai que récupéré les outils de xxx. Disponibles sur PyPi, je les ai installés avec la commande pip (comme toutes les bibliothèques utilisées dans le script). Ainsi, nous avons simplement qu'à récupérer les fichiers .py et lancer un pip install de requirement.txt pour que tout soit correctement installé.
+Pour le moment, je n'ai que récupéré les outils de @megadose. Disponibles sur PyPi, je les ai installés avec la commande pip (comme toutes les bibliothèques utilisées dans le script). Ainsi, nous avons simplement qu'à récupérer les fichiers .py et lancer un pip install de requirement.txt pour que tout soit correctement installé.
 
 2 fichiers sont nécessaires pour faire fonctionner le CLI :
 
