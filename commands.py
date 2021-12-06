@@ -1,5 +1,7 @@
 """
 Fichier de code définissant les commandes du CLI
+
+Romain Delalande
 """
 import subprocess
 from colorama import Fore
@@ -14,18 +16,18 @@ class Commands:
 
     def __init__(self) -> None:
         """
-        Function allowing to set and initialise the instances
-        ("global variables") useful in the following functions
+        Fonction permettant de définir et d'initialiser les instances
+        ("variables globales au CLI") utiles dans les fonctions suivantes
 
         """
-        print(f"{Fore.YELLOW} --- Initialisation of the necessary instances --- {Fore.RESET} \n")
+        print(f"{Fore.YELLOW} --- Initialisation des instances nécessaires --- {Fore.RESET} \n")
 
     def __del__(self) -> None:
         """
-        Function to cleanly delete instances
+        Fonction permettant de supprimer proprement les instances
 
         """
-        print(f"{Fore.YELLOW} --- Deletion of instances --- {Fore.RESET}")
+        print(f"{Fore.YELLOW} --- Suppression des instances --- {Fore.RESET}")
 
     def exit(self):
         """
@@ -46,12 +48,12 @@ class Commands:
 
     def toutatis(self, sessionsid: str, username: str) -> None:
         """
-        Toutatis is a tool that allows you to extract information from
-        instagrams accounts such as e-mails, phone numbers and more
+        Toutatis est un outil qui vous permet d'extraire des informations des comptes
+        instagrams tels que les e-mails, les numéros de téléphone et plus encore
 
         Args:
-            sessionsid (str): instagram sessionid (in cookies)
-            username (str): username of the instagram profile to OSINT
+            sessionsid (str): id de session instagram (cookies)
+            username (str): username (pseudo) du compte instagram à OSINT
 
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TOUTATIS... {Fore.RESET}")
@@ -73,12 +75,12 @@ class Commands:
 
     def ignorant(self, country_code: int, phone: int) -> None:
         """
-        Toutatis is a tool that allows you to check if a phone number
-        is used on different sites like snapchat, instagram and more
+        Ignorant est un outil qui vous permet de vérifier si un numéro de téléphone
+        est utilisé sur différents sites comme snapchat, instagram et plus encore
 
         Args:
-            country_code (int): country telephone code
-            phone (int): phone number (9 digits)
+            country_code (int): code téléphonique du pays (ex: +33)
+            phone (int): numéro de téléphone (9 chiffres)
 
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME IGNORANT... {Fore.RESET}")

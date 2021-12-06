@@ -1,10 +1,12 @@
 """
-Fichier de code du CLI de saisie des commandes à l'aide des fèches du clavier
+Fichier de code du CLI par sélection des commandes à l'aide des fèches du clavier
+
+Romain Delalande
 """
 import inspect
 import commands  # commands.py file
-import questionary
 from colorama import Fore
+import questionary
 
 
 class ExceptionExit(Exception):
@@ -14,24 +16,27 @@ class ExceptionExit(Exception):
     """
 
 
-def cli(commands_object):  # cli with a list of functions to be selected by input keyboard
+def cli(commands_object):
     """
-    Fonction qui génère l'interface CLI
+    Fonction qui génère l'interface CLI par sélection des commandes à l'aide des fèches du clavier
 
     """
+    # récupération de la liste des fonctions (des commandes) du fichier commands.py
     commands_list = []
     search_commands = inspect.getmembers(commands_object, inspect.ismethod)
     for command in search_commands:
         if not command[0].startswith("_"):
             commands_list.append(command[0])
 
+    # sélection de la commande à exécuter par l'utilisateur
     choice = questionary.select("Quelle commande voulez-vous exécuter ? ",
                                 choices=commands_list).ask()
 
+    # si la fonction "exit" est sélectionnée : levée d'exception
     if choice == "exit":
         raise ExceptionExit
 
-    # suppression des arguments self
+    # suppression des arguments self de la liste des arguments
     params = inspect.getfullargspec(getattr(commands_object, choice))
     args_fct = params.args[:]
     del args_fct[args_fct.index("self")]
@@ -42,7 +47,7 @@ def cli(commands_object):  # cli with a list of functions to be selected by inpu
         getattr(commands_object, choice)()
         print("")
 
-    # si fonction avec arguments, saisie avant appel
+    # si fonction avec arguments, saisie des arguments avant appel de fonction
     else:
         doc = inspect.getdoc(getattr(commands_object, choice))
         print("\n")
@@ -60,9 +65,13 @@ def cli(commands_object):  # cli with a list of functions to be selected by inpu
 
 if __name__ == "__main__":
 
-    print(f"\n{Fore.YELLOW} --- START OF PROGRAM --- {Fore.RESET}")
+    print(f"\n{Fore.YELLOW} --- DEBUT DU PROGRAMME --- {Fore.RESET}")
+    # initialisation de l'objet de la classe Commands (commands.py)
+    # permet de garder la modification de potentielles variables jusqu'à la fermeture du CLI
+    # (ou de la réinitialisation des instances)
     commands_objt = commands.Commands()
 
+    # boucle permettant le CLI interactif
     user_input = True
     while user_input:
         try:
@@ -70,5 +79,6 @@ if __name__ == "__main__":
         except ExceptionExit:
             user_input = not questionary.confirm("Êtes-vous sûr de vouloir quitter ?").ask()
             print("\n")
+
     commands_objt.exit()
     print(f"{Fore.YELLOW} --- FIN DU PROGRAMME --- {Fore.RESET}")
