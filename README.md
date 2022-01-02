@@ -19,9 +19,11 @@ On retrouve donc dans le CLI la liste des outils avec leur description. Leur uti
     
     Seulement quelques lignes de codes diverses entre ces 2 scripts python afin de changer le mode de sélection (saisie au clavier ou sélection graphique)
 
-Une [Documentation](https://github.com/Delrom01/interactive-cli-osint-tools/blob/main/Doc/_build/html/index.html) est disponible
+Une [Documentation](https://github.com/Delrom01/interactive-cli-osint-tools/blob/main/Doc/_build/html/index.html) est également disponible. Une fois le dépôt cloné, on peut y accéder via le lien suivant : ```file://<path>/interactive-cli-osint-tools/Doc/_build/html/commands.html``` dans un navigateur comme Firefox.
 
 ### Installation 
-Les outils présents dans le CLI sont disponibles sur PyPi, je les ai donc installés avec la commande pip (comme toutes les bibliothèques utilisées dans ces scripts). 
+Les outils présents dans le CLI sont disponibles sur PyPi, je les ai donc installés avec la commande ```pip``` (comme toutes les bibliothèques utilisées dans ces scripts). 
 
-Ainsi, pour l'installation du CLI, nous avons simplement qu'à cloner le dépôt github pour récupérer les fichiers .py ainsi que la documentation et lancer ```pip install -r requirements.txt``` pour que tous les outils s'installent.
+Ainsi, pour l'installation du CLI, nous avons simplement qu'à :
+1. cloner le dépôt github pour récupérer les fichiers .py ainsi que la documentation : ```git@github.com:Delrom01/interactive-cli-osint-tools.git```
+2. lancer ```pip install -r requirements.txt``` pour que tous les outils nécessaires et utilisés dans le CLI s'installent
