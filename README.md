@@ -15,8 +15,7 @@ On retrouve donc dans le CLI la liste des outils avec leur description. Leur uti
   - ```commands.py``` : qui contient une classe ```Commands()``` définissant toutes les fonctions du CLI. C'est dans ce fichier qu'on ajoutera le code d'un nouvel outil.
   - ```cli_list_exe.py``` ou ```cli_input_exe.py``` : qui contient le code de l'interface CLI à générer du fichier ```commands.py```. 
     
-    Nous avons 2 types de CLI : l'un où les outils sont appelés par saisie au clavier avec système d'autocomplétion (cli_input_exe), et l'autre où les outils sont   
-    sélectionnés parmi une liste à l'aide des flèches du clavier (cli_list_exe).    
+    Nous avons 2 types de CLI : l'un où les outils sont appelés par saisie au clavier avec système d'autocomplétion (cli_input_exe), et l'autre où les outils sont   sélectionnés parmi une liste à l'aide des flèches du clavier (cli_list_exe).    
     
     Seulement quelques lignes de codes diverses entre ces 2 scripts python afin de changer le mode de sélection (saisie au clavier ou sélection graphique)
 
