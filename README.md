@@ -3,7 +3,7 @@ Create an interactive CLI of OSINT tools
 
 ### Description
 Pour mon projet d'UTC503 du CNAM, j'ai décidé de créer un CLI interactif d'outils OSINT. 
-L'idée c'est d'avoir un seul outil à lancer (lors d'un CTF par exemple) pour ensuite accéder à d'autre (au lieu de retenir tous les différents outils OSINT et de les lancer individuellements).
+L'idée c'est d'avoir un seul outil à lancer (lors d'un CTF par exemple) pour ensuite accéder à d'autres (au lieu de retenir tous les différents outils OSINT et de les lancer individuellements).
 
 On retrouve donc dans le CLI la liste des outils avec leur description. Leur utilisation est ensuite guidée est assistée.
 
