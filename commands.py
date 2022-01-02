@@ -1,7 +1,6 @@
 """
 Fichier de code définissant les commandes du CLI
 
-Romain Delalande
 """
 import subprocess
 from colorama import Fore

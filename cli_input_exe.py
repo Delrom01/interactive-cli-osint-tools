@@ -1,7 +1,6 @@
 """
 Fichier de code du CLI par saisie des commandes au clavier
 
-Romain Delalande
 """
 import inspect
 import commands  # commands.py file

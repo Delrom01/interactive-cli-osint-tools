@@ -1,7 +1,6 @@
 """
 Fichier de code du CLI par sélection des commandes à l'aide des fèches du clavier
 
-Romain Delalande
 """
 import inspect
 import commands  # commands.py file

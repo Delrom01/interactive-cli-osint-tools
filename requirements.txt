@@ -5,4 +5,4 @@ toutatis==1.24
 ignorant==1.2
 holehe==1.60.3
 maigret==0.3.1
-twint==2.1.20
+twint==2.1.21
