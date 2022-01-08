@@ -95,12 +95,12 @@ if __name__ == "__main__":
     commands_objt = commands.Commands()
 
     # boucle permettant le CLI interactif
-    user_input = True
-    while user_input:
+    USER_INPUT = True
+    while USER_INPUT:
         try:
             cli(commands_objt)
         except ExceptionExit:
-            user_input = not questionary.confirm("Êtes-vous sûr de vouloir quitter ?").ask()
+            USER_INPUT = not questionary.confirm("Êtes-vous sûr de vouloir quitter ?").ask()
             print("\n")
 
     commands_objt.exit()

@@ -77,7 +77,8 @@ class Commands:
         Ignorant est un outil qui vous permet de vérifier si un numéro de téléphone
         est utilisé sur différents sites comme snapchat, instagram et plus encore.
 
-        usage: ignorant [--only-used] country code [country code ...] phone number [phone number ...]
+        usage: ignorant [--only-used] country code [country code ...]
+                        phone number [phone number ...]
 
         Args:
             country_code (int): code téléphonique du pays (ex: +33).
