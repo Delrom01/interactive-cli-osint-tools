@@ -30,8 +30,8 @@ Ainsi, pour l'installation du CLI, nous avons simplement qu'à :
 ### Utilisation 
 Pour lancer le CLI, il suffit d'exécuter la commande suivante : ```python3 cli_list_exe.py``` ou ```python3 cli_input_exe.py``` (suivant le type de CLI souhaité), et de se laisser guider. Exemple : 
 
-![Exemple_1](relative/path/to/img.jpg?raw=true "Exemple d'utilisation (1)")
+![Exemple_1](https://github.com/Delrom01/interactive-cli-osint-tools/blob/main/Images/Exemple%20d'utilisation%20(1).png?raw=true "Exemple d'utilisation (1)")
 
-![Exemple_2](relative/path/to/img.jpg?raw=true "Exemple d'utilisation (2)")
+![Exemple_2](https://github.com/Delrom01/interactive-cli-osint-tools/blob/main/Images/Exemple%20d'utilisation%20(2).png?raw=true "Exemple d'utilisation (2)")
 
-Une [Documentation](https://github.com/Delrom01/interactive-cli-osint-tools/blob/main/Doc/_build/html/index.html) est également disponible. Une fois le dépôt cloné, on peut y accéder via le lien suivant : ```file://<path>/interactive-cli-osint-tools/Doc/_build/html/commands.html``` dans un navigateur comme Firefox.
+Une [Documentation](https://interactive-cli-osint-tools-doc.000webhostapp.com/index.html) est également disponible. Une fois le dépôt cloné, on peut également y accéder via le lien suivant : ```file://<path>/interactive-cli-osint-tools/Doc/_build/html/commands.html``` dans un navigateur.
