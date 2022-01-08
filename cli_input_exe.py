@@ -1,5 +1,13 @@
 """
-Fichier de code du CLI par saisie des commandes au clavier
+Fichier de code du CLI par saisie des commandes au clavier.
+
+
+Utilisation du CLI :
+
+    -  Une liste des commandes disponibles est affichée et la sélection
+       se fait par saisie du nom de la commande au clavier.
+
+    -  Un système d'autocomplétion est disponible à l'aide de la touche <Tab>.
 
 """
 import inspect
@@ -10,14 +18,17 @@ import questionary
 
 class ExceptionExit(Exception):
     """
-    Exception qui permet de quitter le CLI
+    Exception qui permet de quitter le CLI.
 
     """
 
 
 def cli(commands_object):
     """
-    Fonction qui génère l'interface CLI par saisie des commandes au clavier
+    Fonction qui génère l'interface CLI par saisie des commandes au clavier.
+
+    Args:
+            commands_object : fichier de commandes à partir duquel générer l'interface.
 
     """
     # récupération de la liste des fonctions (des commandes) du fichier commands.py

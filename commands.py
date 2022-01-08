@@ -1,5 +1,5 @@
 """
-Fichier de code définissant les commandes du CLI
+Fichier de code définissant les commandes disponibles dans le CLI.
 
 """
 import subprocess
@@ -11,33 +11,34 @@ WAIT_MESSAGE = f"{Fore.YELLOW} Veuillez patienter {Fore.RESET} \n"
 
 class Commands:
     """
-    Classe définissant toutes les commandes du CLI
+    Classe définissant toutes les commandes du CLI.
+
     """
 
     def __init__(self) -> None:
         """
         Fonction permettant de définir et d'initialiser les instances
-        ("variables globales au CLI") utiles dans les fonctions suivantes
+        ("variables globales au CLI") utiles dans les fonctions suivantes.
 
         """
         print(f"{Fore.YELLOW} --- Initialisation des instances nécessaires --- {Fore.RESET} \n")
 
     def __del__(self) -> None:
         """
-        Fonction permettant de supprimer proprement les instances
+        Fonction permettant de supprimer proprement les instances.
 
         """
         print(f"{Fore.YELLOW} --- Suppression des instances --- {Fore.RESET}")
 
     def exit(self):
         """
-        Fonction permettant de quitter le CLI
+        Fonction permettant de quitter le CLI.
 
         """
 
     def _reset_instances(self):
         """
-        Fonction permettant de réinitialiser les instances de la classe
+        Fonction permettant de réinitialiser les instances de la classe.
 
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME DE RESET DES INSTANCES... {Fore.RESET}")
@@ -49,11 +50,13 @@ class Commands:
     def toutatis(self, sessionsid: str, username: str) -> None:
         """
         Toutatis est un outil qui vous permet d'extraire des informations des comptes
-        instagrams tels que les e-mails, les numéros de téléphone et plus encore
+        instagrams tels que les e-mails, les numéros de téléphone et plus encore.
+
+        usage: toutatis -s SESSIONID -u USERNAME
 
         Args:
-            sessionsid (str): id de session instagram (cookies)
-            username (str): username (pseudo) du compte instagram à OSINT
+            sessionsid (str): id de session instagram (cookies).
+            username (str): username (pseudo) du compte instagram à OSINT.
 
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TOUTATIS... {Fore.RESET}\n")
@@ -72,11 +75,13 @@ class Commands:
     def ignorant(self, country_code: int, phone: int) -> None:
         """
         Ignorant est un outil qui vous permet de vérifier si un numéro de téléphone
-        est utilisé sur différents sites comme snapchat, instagram et plus encore
+        est utilisé sur différents sites comme snapchat, instagram et plus encore.
+
+        usage: ignorant [--only-used] country code [country code ...] phone number [phone number ...]
 
         Args:
-            country_code (int): code téléphonique du pays (ex: +33)
-            phone (int): numéro de téléphone (9 chiffres)
+            country_code (int): code téléphonique du pays (ex: +33).
+            phone (int): numéro de téléphone (9 chiffres).
 
         """
         display = questionary.select(
@@ -106,10 +111,12 @@ class Commands:
     def holehe(self, email: str) -> None:
         """
         Holehe vérifie si un mail est attaché à un compte sur des sites
-        comme twitter, instagram, imgur et plus de 120 autres
+        comme twitter, instagram, imgur et plus de 120 autres.
+
+        usage: holehe [--only-used] EMAIL [EMAIL ...]
 
         Args:
-            email (str): adresse mail à vérifier (ex: test@gmail.com)
+            email (str): adresse mail à vérifier (ex: test@gmail.com).
 
         """
         display = questionary.select(
@@ -139,10 +146,12 @@ class Commands:
     def maigret(self, username: str) -> None:
         """
         Maigret constitue un dossier sur une personne en se basant uniquement sur son nom
-        d'utilisateur, en vérifiant les comptes sur un très grand nombre de sites (>2400)
+        d'utilisateur, en vérifiant les comptes sur un très grand nombre de sites (>2400).
+
+        usage: maigret [-T] [-C] [-H] [-X] [-P] [-J TYPE] [USERNAMES [USERNAMES ...]]
 
         Args:
-            username (str): nom d'utilisateur (pseudo) à OSINT
+            username (str): nom d'utilisateur (pseudo) à OSINT.
 
         Returns:
             Un fichier de résultat "report_username.format" est généré dans le répertoire
@@ -169,15 +178,17 @@ class Commands:
     def twint(self, username: str, topic: str, backup_file) -> None:
         """
         Twint est un outil de scraping Twitter qui permet de récupérer des Tweets à partir
-        de profils Twitter ou de sujets (utilise les opérateurs de recherches Twitter)
+        de profils Twitter ou de sujets (utilise les opérateurs de recherches Twitter).
+
+        usage: twint -u USERNAME -s SEARCH -o OUTPUT
 
         Args:
-            username (str): nom d'utilisateur (pseudo) Twitter
-            topic (str): mot clés, sujet à rechercher (dans des tweets)
-            backup_file (str): nom du fichier de résultat
+            username (str): nom d'utilisateur (pseudo) Twitter.
+            topic (str): mot clés, sujet à rechercher (dans des tweets).
+            backup_file (str): nom du fichier de résultat.
 
         Returns:
-            Un fichier de résultat "backup_file.csv" est généré
+            Un fichier de résultat "backup_file.csv" est généré.
 
         """
         print(f"{Fore.YELLOW} DEMARRAGE DU PROGRAMME TWINT... {Fore.RESET}\n")

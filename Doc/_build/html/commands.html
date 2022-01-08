@@ -73,26 +73,27 @@
              
   <section id="module-commands">
 <span id="commands-module"></span><h1>commands module<a class="headerlink" href="#module-commands" title="Permalink to this headline"></a></h1>
-<p>Fichier de code définissant les commandes du CLI</p>
+<p>Fichier de code définissant les commandes disponibles dans le CLI.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="commands.Commands">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commands.</span></span><span class="sig-name descname"><span class="pre">Commands</span></span><a class="headerlink" href="#commands.Commands" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Classe définissant toutes les commandes du CLI</p>
+<p>Classe définissant toutes les commandes du CLI.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="commands.Commands.exit">
 <span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commands.Commands.exit" title="Permalink to this definition"></a></dt>
-<dd><p>Fonction permettant de quitter le CLI</p>
+<dd><p>Fonction permettant de quitter le CLI.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="commands.Commands.holehe">
 <span class="sig-name descname"><span class="pre">holehe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#commands.Commands.holehe" title="Permalink to this definition"></a></dt>
 <dd><p>Holehe vérifie si un mail est attaché à un compte sur des sites
-comme twitter, instagram, imgur et plus de 120 autres</p>
+comme twitter, instagram, imgur et plus de 120 autres.</p>
+<p>usage: holehe [–only-used] EMAIL [EMAIL …]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>email</strong> (<em>str</em>) – adresse mail à vérifier (ex: <a class="reference external" href="mailto:test&#37;&#52;&#48;gmail&#46;com">test<span>&#64;</span>gmail<span>&#46;</span>com</a>)</p>
+<dd class="field-odd"><p><strong>email</strong> (<em>str</em>) – adresse mail à vérifier (ex: <a class="reference external" href="mailto:test&#37;&#52;&#48;gmail&#46;com">test<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -101,12 +102,13 @@ comme twitter, instagram, imgur et plus de 120 autres</p>
 <dt class="sig sig-object py" id="commands.Commands.ignorant">
 <span class="sig-name descname"><span class="pre">ignorant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#commands.Commands.ignorant" title="Permalink to this definition"></a></dt>
 <dd><p>Ignorant est un outil qui vous permet de vérifier si un numéro de téléphone
-est utilisé sur différents sites comme snapchat, instagram et plus encore</p>
+est utilisé sur différents sites comme snapchat, instagram et plus encore.</p>
+<p>usage: ignorant [–only-used] country code [country code …] phone number [phone number …]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>country_code</strong> (<em>int</em>) – code téléphonique du pays (ex: +33)</p></li>
-<li><p><strong>phone</strong> (<em>int</em>) – numéro de téléphone (9 chiffres)</p></li>
+<li><p><strong>country_code</strong> (<em>int</em>) – code téléphonique du pays (ex: +33).</p></li>
+<li><p><strong>phone</strong> (<em>int</em>) – numéro de téléphone (9 chiffres).</p></li>
 </ul>
 </dd>
 </dl>
@@ -116,10 +118,11 @@ est utilisé sur différents sites comme snapchat, instagram et plus encore</p>
 <dt class="sig sig-object py" id="commands.Commands.maigret">
 <span class="sig-name descname"><span class="pre">maigret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#commands.Commands.maigret" title="Permalink to this definition"></a></dt>
 <dd><p>Maigret constitue un dossier sur une personne en se basant uniquement sur son nom
-d’utilisateur, en vérifiant les comptes sur un très grand nombre de sites (&gt;2400)</p>
+d’utilisateur, en vérifiant les comptes sur un très grand nombre de sites (&gt;2400).</p>
+<p>usage: maigret [-T] [-C] [-H] [-X] [-P] [-J TYPE] [USERNAMES [USERNAMES …]]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> (<em>str</em>) – nom d’utilisateur (pseudo) à OSINT</p>
+<dd class="field-odd"><p><strong>username</strong> (<em>str</em>) – nom d’utilisateur (pseudo) à OSINT.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Un fichier de résultat “report_username.format” est généré dans le répertoire
@@ -132,12 +135,13 @@ d’utilisateur, en vérifiant les comptes sur un très grand nombre de sites (&
 <dt class="sig sig-object py" id="commands.Commands.toutatis">
 <span class="sig-name descname"><span class="pre">toutatis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionsid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#commands.Commands.toutatis" title="Permalink to this definition"></a></dt>
 <dd><p>Toutatis est un outil qui vous permet d’extraire des informations des comptes
-instagrams tels que les e-mails, les numéros de téléphone et plus encore</p>
+instagrams tels que les e-mails, les numéros de téléphone et plus encore.</p>
+<p>usage: toutatis -s SESSIONID -u USERNAME</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sessionsid</strong> (<em>str</em>) – id de session instagram (cookies)</p></li>
-<li><p><strong>username</strong> (<em>str</em>) – username (pseudo) du compte instagram à OSINT</p></li>
+<li><p><strong>sessionsid</strong> (<em>str</em>) – id de session instagram (cookies).</p></li>
+<li><p><strong>username</strong> (<em>str</em>) – username (pseudo) du compte instagram à OSINT.</p></li>
 </ul>
 </dd>
 </dl>
@@ -147,17 +151,18 @@ instagrams tels que les e-mails, les numéros de téléphone et plus encore</p>
 <dt class="sig sig-object py" id="commands.Commands.twint">
 <span class="sig-name descname"><span class="pre">twint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backup_file</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#commands.Commands.twint" title="Permalink to this definition"></a></dt>
 <dd><p>Twint est un outil de scraping Twitter qui permet de récupérer des Tweets à partir
-de profils Twitter ou de sujets (utilise les opérateurs de recherches Twitter)</p>
+de profils Twitter ou de sujets (utilise les opérateurs de recherches Twitter).</p>
+<p>usage: twint -u USERNAME -s SEARCH -o OUTPUT</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>username</strong> (<em>str</em>) – nom d’utilisateur (pseudo) Twitter</p></li>
-<li><p><strong>topic</strong> (<em>str</em>) – mot clés, sujet à rechercher (dans des tweets)</p></li>
-<li><p><strong>backup_file</strong> (<em>str</em>) – nom du fichier de résultat</p></li>
+<li><p><strong>username</strong> (<em>str</em>) – nom d’utilisateur (pseudo) Twitter.</p></li>
+<li><p><strong>topic</strong> (<em>str</em>) – mot clés, sujet à rechercher (dans des tweets).</p></li>
+<li><p><strong>backup_file</strong> (<em>str</em>) – nom du fichier de résultat.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Un fichier de résultat “backup_file.csv” est généré</p>
+<dd class="field-even"><p>Un fichier de résultat “backup_file.csv” est généré.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -1,5 +1,11 @@
 """
-Fichier de code du CLI par sélection des commandes à l'aide des fèches du clavier
+Fichier de code du CLI par sélection des commandes à l'aide des fèches du clavier.
+
+
+Utilisation du CLI :
+
+    -  Une liste des commandes disponibles est affichée et la sélection
+       se fait à l'aide des flèches ↑↓ du clavier.
 
 """
 import inspect
@@ -10,14 +16,17 @@ import questionary
 
 class ExceptionExit(Exception):
     """
-    Exception qui permet de quitter le CLI
+    Exception qui permet de quitter le CLI.
 
     """
 
 
 def cli(commands_object):
     """
-    Fonction qui génère l'interface CLI par sélection des commandes à l'aide des fèches du clavier
+    Fonction qui génère l'interface CLI par sélection des commandes à l'aide des fèches du clavier.
+
+    Args:
+            commands_object : fichier de commandes à partir duquel générer l'interface.
 
     """
     # récupération de la liste des fonctions (des commandes) du fichier commands.py
