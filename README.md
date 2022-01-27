@@ -36,7 +36,7 @@ Pour lancer le CLI, il suffit d'exécuter la commande suivante : ```python3 cli_
 
 ![Exemple_2](https://github.com/Delrom01/interactive-cli-osint-tools/blob/main/Images/Exemple%20d'utilisation%20(2).png?raw=true "Exemple d'utilisation (2)")
 
-Une [Documentation](https://interactive-cli-osint-tools-doc.000webhostapp.com/index.html) est également disponible. Une fois le dépôt cloné, on peut également y accéder via le lien suivant : ```file://<path>/interactive-cli-osint-tools/Doc/_build/html/commands.html``` dans un navigateur.
+Une [Documentation](https://interactive-cli-osint-tools-doc.000webhostapp.com/index.html) générée avec Sphinx est également disponible. Une fois le dépôt cloné, on peut également y accéder via le lien suivant : ```file://<path>/interactive-cli-osint-tools/Doc/_build/html/commands.html``` dans un navigateur.
 
 ### Dépendances
 - questionary
