@@ -19,6 +19,8 @@ On retrouve donc dans le CLI la liste des outils avec leur description. Leur uti
     
     Seulement quelques lignes de codes diverses entre ces 2 scripts python afin de changer le mode de sélection (saisie au clavier ou sélection graphique)
 
+L'idée étant de faire un vrai CLI intéractif (un peu comme une application qu'on lance), je n'ai donc pas utilisé Argparse ou Click. Mais j'ai privilégié Questionnary (équivalent de PyInquirer) afin de gérer les arguments et proposer une intéraction claire et fluide à l'utilisateur.
+
 ### Installation 
 Les outils présents dans le CLI sont disponibles sur PyPi, je les ai donc installés avec la commande ```pip``` (comme toutes les bibliothèques utilisées dans ces scripts). 
 
